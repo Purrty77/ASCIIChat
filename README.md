@@ -1,6 +1,6 @@
-# ASCCI
+# ASCIIChat
 
-Une application de bureau Windows en français pour transformer une image en art ASCII et la partager dans un chat. Les images sont traitées localement. L’interface web reste disponible pour le développement.
+ASCIIChat (application ASCCI) est une application de bureau Windows en français pour transformer une image en art ASCII et la partager dans un chat. Les images sont traitées localement. L’interface web reste disponible pour le développement.
 
 ## Démarrer
 
