@@ -1,0 +1,39 @@
+{
+  "name": "ascci",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Convertisseur local d’images en art ASCII",
+  "main": "desktop/main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "web": "node server.js",
+    "test": "node --test",
+    "test:desktop": "electron desktop/smoke.cjs",
+    "build:win": "electron-builder --win portable --x64 --publish never"
+  },
+  "build": {
+    "appId": "local.ascci.desktop",
+    "productName": "ASCCI",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "desktop/**",
+      "index.html",
+      "style.css",
+      "app.js",
+      "ascii.js",
+      "package.json"
+    ],
+    "win": {
+      "target": "portable",
+      "signAndEditExecutable": false
+    },
+    "artifactName": "ASCCI-${version}-Windows.${ext}"
+  },
+  "devDependencies": {
+    "electron": "44.4.5",
+    "electron-builder": "26.15.3"
+  }
+}
