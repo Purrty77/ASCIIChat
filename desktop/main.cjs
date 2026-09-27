@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu } = require('electron');
+const { app, BrowserWindow, Menu, shell } = require('electron');
 const path = require('node:path');
 
 function createWindow() {
@@ -12,7 +12,10 @@ function createWindow() {
     backgroundColor: '#0e0e10',
     webPreferences: { nodeIntegration: false, contextIsolation: true, sandbox: true }
   });
-  window.webContents.setWindowOpenHandler(() => ({ action: 'deny' }));
+  window.webContents.setWindowOpenHandler(({ url }) => {
+    if (url === 'https://github.com/Purrty77/ASCIIChat') shell.openExternal(url);
+    return { action: 'deny' };
+  });
   window.webContents.on('will-navigate', event => event.preventDefault());
   window.loadFile(path.join(__dirname, '..', 'index.html'));
 }

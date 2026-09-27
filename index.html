@@ -9,9 +9,9 @@
   <link rel="icon" type="image/png" href="assets/branding/asciichat-icon-32.png">
 </head>
 <body>
-  <header><a class="logo" href="./" aria-label="ASCIIChat home"><img src="assets/branding/asciichat-header.png" alt="ASCIIChat" width="230" height="84"></a><span>Your ASCII studio for Twitch.</span><span class="badge">100% local</span></header>
+  <header><a class="logo" href="./" aria-label="ASCIIChat home"><img src="assets/branding/asciichat-header.png" alt="ASCIIChat" width="230" height="84"></a><span>Your ASCII studio for Twitch.</span><div class="header-badges"><span class="badge">100% local</span><a class="github-link" href="https://github.com/Purrty77/ASCIIChat" target="_blank" rel="noopener noreferrer" aria-label="Open source — ASCIIChat on GitHub"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.24c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.23 1.84 1.23 1.07 1.83 2.81 1.3 3.49.99.11-.77.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.6-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.32c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>Open source</a></div></header>
   <main>
-    <section class="intro"><p class="eyebrow">MADE FOR CHAT</p><h1>Your image.<br>In <em>Twitch chat.</em></h1><p>Turn an image into chat art. Create, copy, and share. 500 characters. Endless possibilities.</p></section>
+    <section class="intro"><p class="eyebrow">MADE FOR CHAT</p><h1>Your image. <em>In Twitch chat.</em></h1><p>Turn an image into chat art. Create, copy, and share. 500 characters. Endless possibilities.</p></section>
     <div class="workspace">
       <aside>
         <label class="drop" id="drop" for="file"><span class="upload-icon">↥</span><strong>Drop an image here</strong><span>or click to browse</span><small>PNG, JPEG, WebP… · 20 MB max</small><input id="file" type="file" accept="image/*"></label>
@@ -26,26 +26,26 @@
           <label class="check"><input id="invert" type="checkbox"> Invert shades</label>
           <label class="check twitch-toggle"><input id="twitch" type="checkbox" aria-controls="twitch-settings"> Disable Twitch mode</label>
           <div id="twitch-settings">
-            <p class="setting-help">Braille art, ready for one chat message. Subtle dots keep the art aligned; padding after your username stays invisible.</p>
+
             <label class="check"><input id="twitch-dither" type="checkbox" checked> Preserve image shading</label>
             <label class="check"><input id="twitch-details" type="checkbox" checked> Enhance details</label>
-            <p class="setting-help">Boost contrast and edges before conversion. For a less dotted look, turn off shading and compare.</p>
-            <p class="setting-help">Shading keeps detail in photos. Turn it off for a bolder, black-and-white look.</p>
+
+            <details class="advanced"><summary>Advanced Twitch settings</summary><div class="advanced-content"><p class="setting-help">Turn off shading for a bolder look. Chat widths vary: adjust width and padding only if your art does not align.</p>
             <label for="twitch-width">Art width <output id="twitch-width-value">20 characters</output></label>
             <input id="twitch-width" type="range" min="2" max="40" value="20">
             <label for="twitch-padding">Padding after username <output id="twitch-padding-value">12 characters</output></label>
             <input id="twitch-padding" type="range" min="0" max="40" value="12">
             <button id="twitch-reset" type="button" class="secondary">Restore defaults</button>
-            <button id="twitch-fit" class="secondary" disabled>Fit to 500 characters</button>
+
             <p class="setting-help">Chat widths vary. Increase padding if the art starts beside your username. Reduce width if rows break. Other viewers may see different wrapping.</p>
-            <p id="twitch-budget" role="status" class="setting-help">Limit: 500 characters, including padding.</p>
+            </div></details><button id="twitch-fit" class="secondary" disabled>Fit to 500 characters</button><p id="twitch-budget" role="status" class="setting-help">Limit: 500 characters, including padding.</p>
           </div>
         </div>
-        <p class="privacy">Your images stay on your device.<br>No account. No uploads.</p>
+        <p class="privacy">Local processing. No account. No uploads.</p>
       </aside>
       <section class="preview" aria-label="ASCII output">
         <div class="preview-bar"><span><i></i> <span id="preview-title">TWITCH PREVIEW · APPROXIMATE</span></span><span id="dimensions">Waiting for an image</span></div>
-        <p id="twitch-preview-note" class="setting-help preview-note">Intended row layout. The first row leaves room for your username. Actual line wrapping depends on the Twitch chat window.</p>
+        <p id="twitch-preview-note" class="setting-help preview-note">First row reserved for your username. Actual wrapping depends on your chat window.</p>
         <div class="art-scroll"><pre id="art" tabindex="0" aria-label="Image converted to ASCII characters"></pre><div id="empty"><pre aria-hidden="true"> /\_/\\
 ( o.o )
  &gt; ^ &lt;</pre><h2>Your chat. Your art.</h2><p>Drop an image and watch the characters take shape.</p><button id="demo" class="secondary">Try a demo image</button></div></div>
