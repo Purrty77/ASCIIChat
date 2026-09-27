@@ -3,12 +3,12 @@ const path = require('node:path');
 
 function createWindow() {
   const window = new BrowserWindow({
-    title: 'ASCCI',
+    title: 'ASCIIChat',
     width: 1200,
     height: 900,
     minWidth: 600,
     minHeight: 600,
-    backgroundColor: '#101315',
+    backgroundColor: '#0e0e10',
     webPreferences: { nodeIntegration: false, contextIsolation: true, sandbox: true }
   });
   window.webContents.setWindowOpenHandler(() => ({ action: 'deny' }));

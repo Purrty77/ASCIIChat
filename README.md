@@ -1,10 +1,10 @@
 # ASCIIChat
 
-ASCIIChat (application ASCCI) est une application de bureau Windows en français pour transformer une image en art ASCII et la partager dans un chat. Les images sont traitées localement. L’interface web reste disponible pour le développement.
+ASCIIChat est une application de bureau Windows avec une interface en anglais pour transformer une image en art ASCII et la partager dans un chat. Les images sont traitées localement. L’interface web reste disponible pour le développement.
 
 ## Démarrer
 
-Pour utiliser l’application, ouvrir l’exécutable portable `ASCCI-0.1.0-Windows.exe` produit dans `dist/`. Aucun serveur ni installation de Node.js n’est nécessaire pour l’utilisateur.
+Pour utiliser l’application, ouvrir l’exécutable portable `ASCIIChat-0.1.0-Windows.exe` produit dans `dist/`. Aucun serveur ni installation de Node.js n’est nécessaire pour l’utilisateur.
 
 Pour développer, avec une version LTS récente de Node.js :
 
@@ -13,7 +13,7 @@ npm ci
 npm start
 ```
 
-Une fenêtre ASCCI s’ouvre. Importer une image ou essayer la démo, régler la largeur, le contraste et la palette, puis copier le résultat ou télécharger le fichier `.txt`.
+Une fenêtre ASCIIChat s’ouvre. Importer une image ou essayer la démo, régler la largeur, le contraste et la palette, puis copier le résultat ou télécharger le fichier `.txt`.
 
 Pour produire l’exécutable Windows : `npm run build:win`. Cette première version n’est pas signée numériquement. Pour lancer la version navigateur : `npm run web`, puis ouvrir http://localhost:3000.
 
@@ -29,7 +29,7 @@ Coller le texte dans un bloc de code (trois accents graves avant et après le te
 
 **Préserver les nuances de l’image**, activé par défaut, utilise un tramage ordonné : la densité des points traduit la luminosité au lieu de transformer tous les tons sombres en cellules vides. Ce réglage convient aux photos et peut être désactivé pour retrouver le seuil noir/blanc, utile aux logos. Il ne change ni les dimensions ni le nombre de caractères du message.
 
-Cocher **Compatible Twitch** active une conversion en braille Unicode (2 × 4 pixels par caractère), avec une largeur indépendante de l’ASCII classique. Un préfixe de caractères braille vides U+2800 sert à remplir la fin de la ligne du pseudo. Régler **Blanc après le pseudo** selon la place restante après le pseudo et les badges ; régler **Largeur du dessin** selon le chat.
+Le mode Twitch, actif par défaut, utilise une conversion en braille Unicode (2 × 4 pixels par caractère), avec une largeur indépendante de l’ASCII classique. Un préfixe de caractères braille vides U+2800 sert à remplir la fin de la ligne du pseudo. Régler **Blanc après le pseudo** selon la place restante après le pseudo et les badges ; régler **Largeur du dessin** selon le chat.
 
 Le réglage initial est de **20 caractères de large et 12 caractères de remplissage**, testé manuellement dans le chat de l’utilisateur. Dans le dessin uniquement, les cellules vides sont remplacées par un point bas `⠄` (U+2804) : les captures de calibration montrent que cela corrige le décalage des bords sur ce client. Le préfixe reste invisible et la conversion ASCII classique reste inchangée.
 
@@ -52,3 +52,5 @@ npm test
 ## Hébergement
 
 Les fichiers `index.html`, `style.css`, `app.js` et `ascii.js` sont statiques et peuvent être hébergés sur GitHub Pages. Aucun serveur applicatif ni clé API n’est nécessaire. Le serveur Node fourni sert uniquement au développement local.
+
+La case **Disable Twitch mode** passe en ASCII classique. Les réglages classiques sont masqués en mode Twitch.

@@ -14,7 +14,7 @@
   },
   "build": {
     "appId": "local.ascci.desktop",
-    "productName": "ASCCI",
+    "productName": "ASCIIChat",
     "directories": {
       "output": "dist"
     },
@@ -30,7 +30,7 @@
       "target": "portable",
       "signAndEditExecutable": false
     },
-    "artifactName": "ASCCI-${version}-Windows.${ext}"
+    "artifactName": "ASCIIChat-${version}-Windows.${ext}"
   },
   "devDependencies": {
     "electron": "44.4.5",

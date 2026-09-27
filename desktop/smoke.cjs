@@ -16,15 +16,20 @@ app.whenReady().then(async () => {
           else if (++tries > 100) { clearInterval(timer); reject(new Error('Demo failed')); }
         }, 50);
       });
-      const normal = document.getElementById('art').textContent;
-      document.getElementById('twitch').click();
       const twitch = document.getElementById('art').textContent;
+      const defaultTwitch = !document.getElementById('twitch').checked && !document.getElementById('twitch-settings').hidden;
+      document.getElementById('twitch').click();
+      const normal = document.getElementById('art').textContent;
+      const classicVisible = !document.getElementById('classic-settings').hidden && document.getElementById('twitch-settings').hidden;
+      document.getElementById('twitch').click();
       document.getElementById('twitch-width').value = 30;
       document.getElementById('twitch-reset').click();
-      return { normal: normal.length, twitch: twitch.length, enabled: !document.getElementById('copy').disabled,
+      return { defaultTwitch, classicVisible, normal: normal.length, twitch: twitch.length, enabled: !document.getElementById('copy').disabled,
         width: document.getElementById('twitch-width').value, nodeExposed: typeof require !== 'undefined' };
     })()`);
     assert.ok(result.normal > 0);
+    assert.equal(result.defaultTwitch, true);
+    assert.equal(result.classicVisible, true);
     assert.ok(result.twitch > 0 && result.twitch <= 500);
     assert.equal(result.enabled, true);
     assert.equal(result.width, '20');
