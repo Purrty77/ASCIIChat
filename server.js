@@ -7,6 +7,9 @@ const files = new Map([
   ['/app.js', ['app.js', 'text/javascript; charset=utf-8']],
   ['/ascii.js', ['ascii.js', 'text/javascript; charset=utf-8']]
 ]);
+for (const name of ['asciichat-header.png', 'asciichat-icon-32.png']) {
+  files.set(`/assets/branding/${name}`, [`assets/branding/${name}`, 'image/png']);
+}
 http.createServer(async (request, response) => {
   const file = files.get(new URL(request.url, 'http://localhost').pathname);
   if (!file) { response.writeHead(404); response.end('Not found'); return; }

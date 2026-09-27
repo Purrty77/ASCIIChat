@@ -1,12 +1,14 @@
 # ASCIIChat
 
+![ASCIIChat logo](assets/branding/asciichat-header.png)
+
 Turn images into text art for Twitch chat. A portable Windows app with a purple interface, local image processing, and Twitch mode enabled by default.
 
 ## Download
 
 **[Download ASCIIChat for Windows (64-bit)](https://github.com/Purrty77/ASCIIChat/releases/latest)**
 
-Open the release page, download `ASCIIChat-0.1.0-Windows.exe` under **Assets**, and double-click it. No installer, Node.js, or separate browser is needed. The source-code ZIP is for developers, not the ready-to-run app.
+Open the release page, download `ASCIIChat-0.1.1-Windows.exe` under **Assets**, and double-click it. No installer, Node.js, or separate browser is needed. The source-code ZIP is for developers, not the ready-to-run app.
 
 This first version is unsigned. Windows SmartScreen or antivirus software may warn about or block it. macOS and Linux builds are not provided.
 
@@ -72,6 +74,6 @@ For browser development, run `npm run web` and open http://localhost:3000. The f
 
 ## Project status
 
-Version 0.1.0 is an initial release. Twitch rendering has been manually tested in one chat configuration, but identical wrapping across all clients is not guaranteed. Updates are manual: download a newer executable from Releases.
+Version 0.1.1 adds the app logo and Windows executable icon to the initial release. Twitch rendering has been manually tested in one chat configuration, but identical wrapping across all clients is not guaranteed. Updates are manual: download a newer executable from Releases.
 
 ASCIIChat is an independent project and is not affiliated with Twitch.

@@ -4,6 +4,7 @@ const path = require('node:path');
 function createWindow() {
   const window = new BrowserWindow({
     title: 'ASCIIChat',
+    icon: path.join(__dirname, '..', 'assets', 'branding', 'asciichat.ico'),
     width: 1200,
     height: 900,
     minWidth: 600,
